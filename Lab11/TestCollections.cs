@@ -43,29 +43,25 @@ namespace Lab11
             tt.Start();
             if (myList.Contains(first))
             {
-                Console.WriteLine();
+                tt.Stop();
             }
-            tt.Stop();
             testtimes[0] = tt.ElapsedTicks;
             tt.Restart();
             if (myList.Contains(middle))
             {
-                Console.WriteLine();
+                tt.Stop();
             }
-            tt.Stop();
             testtimes[1] = tt.ElapsedTicks;
             tt.Restart();
             if (myList.Contains(last))
             {
-                Console.WriteLine();
+                tt.Stop();
             }
-            tt.Stop();
             testtimes[2] = tt.ElapsedTicks;
             if (!myList.Contains(nonexistant))
             {
-                Console.WriteLine();
+                tt.Stop();
             }
-            tt.Stop();
             testtimes[3] = tt.ElapsedTicks;
             Console.WriteLine("Время поиска в List<PrintEdition>\n\nВремя поиска первого элемента: " + testtimes[0] + "\nВремя поиска центрального элемента: " + testtimes[1] +
                 "\nВремя поиска последнего элемента: " + testtimes[2] + "\nВремя поиска не существующего элемента: " + testtimes[3]);
@@ -88,29 +84,26 @@ namespace Lab11
             tt.Start();
             if (myListString.Contains(first))
             {
-                Console.WriteLine();
+                tt.Stop();
             }
-            tt.Stop();
             testtimes[0] = tt.ElapsedTicks;
             tt.Restart();
             if (myListString.Contains(middle))
             {
-                Console.WriteLine();
+                tt.Stop();
             }
-            tt.Stop();
             testtimes[1] = tt.ElapsedTicks;
             tt.Restart();
             if (myListString.Contains(last))
             {
-                Console.WriteLine();
+                tt.Stop();
             }
-            tt.Stop();
+
             testtimes[2] = tt.ElapsedTicks;
             if (!myListString.Contains(nonexistant))
             {
-                Console.WriteLine();
+                tt.Stop();
             }
-            tt.Stop();
             testtimes[3] = tt.ElapsedTicks;
             Console.WriteLine("Время поиска в List<String>\n\nВремя поиска первого элемента: " + testtimes[0] + "\nВремя поиска центрального элемента: " + testtimes[1] +
                 "\nВремя поиска последнего элемента: " + testtimes[2] + "\nВремя поиска не существующего элемента: " + testtimes[3]);
@@ -141,29 +134,25 @@ namespace Lab11
             tt.Start();
             if (myDictionary.ContainsKey(first))
             {
-                Console.WriteLine();
+                tt.Stop();
             }
-            tt.Stop();
             testtimes[0] = tt.ElapsedTicks;
             tt.Restart();
             if (myDictionary.ContainsKey(middle))
             {
-                Console.WriteLine();
+                tt.Stop();
             }
-            tt.Stop();
             testtimes[1] = tt.ElapsedTicks;
             tt.Restart();
             if (myDictionary.ContainsKey(last))
             {
-                Console.WriteLine();
+                tt.Stop();
             }
-            tt.Stop();
             testtimes[2] = tt.ElapsedTicks;
             if (!myDictionary.ContainsKey(nonexistant))
             {
-                Console.WriteLine();
+                tt.Stop();
             }
-            tt.Stop();
             testtimes[3] = tt.ElapsedTicks;
             Console.WriteLine("Время поиска по ключу в Dictionary<PrintEdition,book>\n\nВремя поиска первого элемента: " + testtimes[0] + "\nВремя поиска центрального элемента: " + testtimes[1] +
                 "\nВремя поиска последнего элемента: " + testtimes[2] + "\nВремя поиска не существующего элемента: " + testtimes[3]);
@@ -193,32 +182,35 @@ namespace Lab11
             tt.Start();
             if (myDictionaryString.ContainsValue(first))
             {
-                Console.WriteLine();
+                tt.Stop();
             }
-            tt.Stop();
             testtimes[0] = tt.ElapsedTicks;
             tt.Restart();
             if (myDictionaryString.ContainsValue(middle))
             {
-                Console.WriteLine();
+                tt.Stop();
             }
-            tt.Stop();
             testtimes[1] = tt.ElapsedTicks;
             tt.Restart();
             if (myDictionaryString.ContainsValue(last))
             {
-                Console.WriteLine();
+                tt.Stop();
             }
-            tt.Stop();
             testtimes[2] = tt.ElapsedTicks;
             if (!myDictionaryString.ContainsValue(nonexistant))
             {
-                Console.WriteLine();
+                tt.Stop();
             }
-            tt.Stop();
             testtimes[3] = tt.ElapsedTicks;
             Console.WriteLine("Время поиска по значению в Dictionary<string,book>\n\nВремя поиска первого элемента: " + testtimes[0] + "\nВремя поиска центрального элемента: " + testtimes[1] +
                 "\nВремя поиска последнего элемента: " + testtimes[2] + "\nВремя поиска не существующего элемента: " + testtimes[3]);
+        }
+        public void ShowItems()
+        {
+           foreach ( KeyValuePair<PrintEdition, book> keyValue in myDictionary)
+            {
+                keyValue.Value.Show();
+            }
         }
     }
 

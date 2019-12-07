@@ -13,8 +13,8 @@ namespace Lab11
     {
         static void Main(string[] args)
         {
-            Task1();
-            Task2();
+            //Task1();
+            //Task2();
             Task3();
 
         }
@@ -231,6 +231,9 @@ namespace Lab11
         public static void Task3()
         {
             TestCollections a = new TestCollections(10);
+            a.ShowItems();
+            Console.ReadKey();
+            Console.Clear();
             a.MyListTimeTest();
             Console.ReadKey();
             Console.Clear();
